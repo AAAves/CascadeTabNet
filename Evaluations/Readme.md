@@ -6,7 +6,8 @@ recognition.
 ## ICDAR 13
 
 Official site : http://www.tamirhassan.com/html/competition.html <br>
-Download the Complete Data [Here](http://www.tamirhassan.com/html/files/icdar2013-competition-dataset-with-gt.zip)
+Download the Complete Data [Here](http://www.tamirhassan.com/html/files/icdar2013-competition-dataset-with-gt.zip)<br>
+Get our Result XML [Here](https://drive.google.com/drive/folders/1ZZTQ4fIsGCqdonWFsoV0UEWpU8IC_FIF?usp=sharing)
 
 ### Prerequisites
 
@@ -44,6 +45,7 @@ to get result
 eu-003
 eu-015
 eu-020
+eu-027
 us-018
 us-019
 us-034

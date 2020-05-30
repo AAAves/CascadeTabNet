@@ -1,5 +1,8 @@
 # CascadeTabNet
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cascadetabnet-an-approach-for-end-to-end/table-detection-on-icdar2013-1)](https://paperswithcode.com/sota/table-detection-on-icdar2013-1?p=cascadetabnet-an-approach-for-end-to-end)
+[![PWC](https://img.shields.io/badge/PyTorch-v1.4-blue)](https://pytorch.org/)
+[![PWC](https://img.shields.io/badge/%20mmdetection%20-v1.2-blue)](https://github.com/open-mmlab/mmdetection)
+
 > **CascadeTabNet: An approach for end to end table detection and structure recognition from image-based documents**<br>
 > [Devashish Prasad](https://github.com/DevashishPrasad),
 > [Ayan Gadpal](https://github.com/ayangadpal),
@@ -7,12 +10,10 @@
 > [Manish Visave](https://github.com/ManishDV),
 > <br>
 > [Preprint Link of Paper](https://arxiv.org/abs/2004.12629)<br>
+> <a href="results.pdf">Supplementary file</a> <br>
 > The paper has been accepted at [CVPR 2020 Workshop on Text and Documents in the Deep Learning Era](https://cvpr2020text.wordpress.com/)<br>
 > 
-
-## End to End Table Recognition Dataset 
-We manually annotated some of the <a href="http://sac.founderit.com/">ICDAR 19 table competition (cTDaR)</a> dataset images. Details about the dataset are mentioned in the paper. 
-<a href="https://drive.google.com/drive/folders/1mNDbbhu-Ubz87oRDjdtLA4BwQwwNOO-G?usp=sharing">dataset link</a>
+<img align="right" src="imgs/CVPR Teaser.gif" />
 
 ## 1. Introduction
 CascadTabNet is an automatic table recognition method for interpretation of tabular data in document images. We present an improved deep learning-based end to end approach for solving both problems of table detection and structure recognition using a single Convolution Neural Network (CNN) model. CascadeTabNet is a Cascade mask Region-based CNN High-Resolution Network (Cascade mask R-CNN HRNet) based model that detects the regions of tables and recognizes the structural body cells from the detected tables at the same time. We evaluate our results on ICDAR 2013, ICDAR 2019 and TableBank public datasets. We achieved 3rd rank in ICDAR 2019 post-competition results for table detection while attaining the best accuracy results for the ICDAR 2013 and TableBank dataset. We also attain the highest accuracy results on the ICDAR 2019 table structure recognition dataset. 
@@ -75,13 +76,10 @@ TableBank Dataset Divisions : <a href="https://drive.google.com/open?id=1lxpK4sa
 <img src="imgs/TSR.png" width="450"/>
 
 ## 6. Model Zoo
-Config file for the Models :
-
-<a href="Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">cascade_mask_rcnn_hrnetv2p_w32_20e.py</a><br>
-Note: Config paths are only required to change during training
-
+Checkout our demo notebook for loading checkpoints and performing inference <br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1lzjbBQsF4X2C2WZhxBJz0wFEQor7F-fv?usp=sharing)<br>
+[Config file](Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py) for the Models<br>
+*Note: Config paths are only required to change during training*<br>
 Checkpoints of the Models we have trained : 
-
 <table>
   <tr>
   <th>Model Name</th><th>Checkpoint File</th>
@@ -109,8 +107,18 @@ Checkpoints of the Models we have trained :
   </tr>      
 </table>
 
-## 7. Additional Results
-<a href="results.pdf">Supplementary file</a>
+## 7. Datasets
+
+1) End to End Table Recognition Dataset <br>
+We manually annotated some of the <a href="http://sac.founderit.com/">ICDAR 19 table competition (cTDaR)</a> dataset images for cell detection in the borderless tables. More details about the dataset are mentioned in the paper. <br>
+<a href="https://drive.google.com/drive/folders/1mNDbbhu-Ubz87oRDjdtLA4BwQwwNOO-G?usp=sharing">dataset link</a>
+
+2) General Table Detection Dataset (ICDAR 19 + Marmot + Github)<br>
+We manually corrected the annotations of Marmot and <a href="https://github.com/sgrpanchal31/table-detection-dataset">Github</a> and combined them with ICDAR 19 dataset to create a general and robust dataset. <br>
+<a href="https://drive.google.com/open?id=1RuEACireEqPnQrYqghEqsOPRE-CkGSUd">dataset link</a>
+
+## 8. Training
+You may refer this <a href="https://www.dlology.com/blog/how-to-train-an-object-detection-model-with-mmdetection/">tutorial</a> for training Mmdetection models on your custom datasets in colab.<br>
 
 ## Contact
 Devashish Prasad : devashishkprasad [at] gmail [dot] com <br>
@@ -118,11 +126,28 @@ Ayan Gadpal : ayangadpal2 [at] gmail [dot] com <br>
 Kshitij Kapadni : kshitij.kapadni [at] gmail [dot] com <br>
 Manish Visave : manishvisave149 [at] gmail [dot] com <br>
 
+## Acknowledgements
+
+We thank the following contributions because of which
+the paper was made possible
+
+1. The **MMdetection** project team for creating the amazing framework to push the state of the art computer vision
+research and which enabled us to experiment and build state of the art models very easily.
+
+2. Our college **”Pune Institute of Computer Technology”** for funding our research and giving us the opportunity to work and publish our research at an international conference.
+
+3. **<a href="http://chenkai.site/">Kai Chen</a>** for endorsing our paper on the arXiv to publish a pre-print of the paper and also for maintaining the Mmdetection repository along with the team.
+
+4. **AP Analytica** for making us aware about a similar problem statement and giving us an opportunity to work on the same.
+
+5. **Overleaf.com** for open sourcing the wonderful project which enabled us to write the research paper easily in the latex format
+
 ## License
-The code of CascadeTabNet is released under the MIT License. There is no limitation for both academic and commercial usage.
+The code of CascadeTabNet is Open Source under the [MIT License](LICENSE.md)
 
 ## Cite as
 If you find this work useful for your research, please cite our paper:
+
 ```
 @misc{ cascadetabnet2020,
     title={CascadeTabNet: An approach for end to end table detection and structure recognition from image-based documents},
